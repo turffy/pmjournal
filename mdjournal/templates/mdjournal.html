@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for post in object_list %}
+<h3><a href="/mdjournal/{{post.id}}">{{ post.Sickness }}</a></h3>
+<div class = "post_meta">
+    on {{ post.date }}
+</div>
+
+<h4>{{ post.Doctor }}</h4>
+
+<div class = "post_Diagnosis">
+     {{ post.Diagnosis|safe|linebreaks }}
+</div>
+
+
+{% endfor %}
+{% endblock %}
